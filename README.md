@@ -2,7 +2,16 @@
 <img src="https://readme-typing-svg.herokuapp.com?color=36BCF7FF&size=40&width=900&height=80&lines=ParkOn+%F0%9F%9A%97" />
 </center>
 
-A new Flutter project.
+## Table of Contents
+- [Introduction]
+- [Demo Video]
+- [Features]
+- [Future Plans]
+- [Installation]
+- [How to Contribute?]
+- [License]
+- [Tech Stack]
+
 
 ## Getting Started
 
