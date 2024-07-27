@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/fastag_signin': (context) => FastagSignInScreen(),
         '/home': (context) => HomeScreen(),
         '/settings': (context) => SettingsScreen(),
+        '/login': (context) => SignUpScreen(),
       },
     );
   }
