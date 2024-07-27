@@ -17,14 +17,14 @@
 </table>
 
 ## Introduction
-- [Introduction](#introduction)
-- [Demo Video](#demo-video)
-- [Features](#features)
-- [Future Plans](#future-plans)
-- [Installation](#installation)
-- [How to Contribute?](#how-to-contribute)
-- [License](#license)
-- [Tech Stack](#tech-stack)
+- [Introduction](#-Introduction)
+- [Demo Video](#-Demo-Video)
+- [Features](#-Features)
+- [Future Plans](#-Future-Plans)
+- [Installation](#-Installation)
+- [How to Contribute?](#-How-to-Contribute)
+- [License](#-License)
+- [Tech Stack](#-Tech-Stack)
 
 
 ##  📝 Introduction
