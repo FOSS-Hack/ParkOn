@@ -26,23 +26,25 @@
 - Tech Stack
 
 
-## Introduction
+##  📝 Introduction
 Welcome to ParkOn, the ultimate solution for finding and reserving parking spots! Whether you're looking for the closest parking location in an open area or within a multi-storey building, ParkOn has you covered. With our app, you can effortlessly locate the nearest available parking spot, book it in advance, and reserve your spot to ensure you have a hassle-free parking experience.
 
-## Demo Video
+##  🎥 Demo Video
 
-## Features
+## 📸 Screenshots
+
+## ⭐ Features
 - **Closest Parking Location:** Instantly find the nearest parking spots based on your current location.
 - **Multi-storey & Open Parking:** Access parking locations in both open areas and multi-storey buildings.
 - **Advance Booking:** Secure your parking spot ahead of time to avoid any last-minute rush.
 
-## Future Plans
+## 🚀 Future Plans
 - **Real-Time Availability:** While ParkOn currently provides real-time availability updates for parking spots reserved through our app, we aim to integrate advanced sensors and IoT devices. This will help us improve monitoring and provide real-time updates even when users park without using the app.
 - **Electric Vehicle Charging Stations:**   Adding information and booking options for parking spots with electric vehicle charging stations.
 - **Voice Assistant Compatibility:** Enabling voice commands for a hands-free parking experience.
 - **User Reviews and Rating:** Allowing users to review and rate parking locations to help others make informed decisions.
 
-## Installation
+## ⚙️ Installation
 
 Download the above .apk file
 
@@ -63,11 +65,11 @@ flutter pub get
 flutter doctor run
 ```
 
-## How to Contribute?
+## 🤝 How to Contribute?
 
-## License
+## 📜 License
 
-## Tech Stack
+## 💻 Tech Stack
 - **Flutter:**  For creating a beautiful, natively compiled mobile application.
 - **Firebase:** For backend services including authentication and cloud storage.
 - **Google Sign-In:** For secure and easy user authentication using Google accounts.
