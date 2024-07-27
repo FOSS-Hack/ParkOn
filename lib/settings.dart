@@ -11,6 +11,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
   final TextEditingController _licenseController = TextEditingController();
+  final TextEditingController _fastagController = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
@@ -29,6 +30,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           _nameController.text = userProfile['name'];
           _ageController.text = userProfile['age'].toString();
           _licenseController.text = userProfile['license'];
+          _fastagController.text = userProfile['fastag_info'];
         });
       }
     }
@@ -69,7 +71,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 child: Icon(Icons.person, size: 50, color: Colors.white),
               ),
               SizedBox(height: 20),
-              TextField(
+              TextFormField(
                 controller: _nameController,
                 decoration: InputDecoration(
                   labelText: 'Name',
@@ -83,7 +85,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 style: TextStyle(color: Colors.white),
               ),
               SizedBox(height: 10),
-              TextField(
+              TextFormField(
                 controller: _ageController,
                 decoration: InputDecoration(
                   labelText: 'Age',
@@ -98,10 +100,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 keyboardType: TextInputType.number,
               ),
               SizedBox(height: 10),
-              TextField(
+              TextFormField(
                 controller: _licenseController,
                 decoration: InputDecoration(
                   labelText: 'Car License Number',
+                  labelStyle: TextStyle(color: Colors.white),
+                  filled: true,
+                  fillColor: Colors.grey[850],
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
+                style: TextStyle(color: Colors.white),
+              ),
+              SizedBox(height: 10),
+              TextFormField(
+                controller: _fastagController,
+                readOnly: true,
+                decoration: InputDecoration(
+                  labelText: 'Fastag ID',
                   labelStyle: TextStyle(color: Colors.white),
                   filled: true,
                   fillColor: Colors.grey[850],
@@ -160,5 +177,4 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 }
-
 
