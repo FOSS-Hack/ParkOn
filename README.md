@@ -15,19 +15,20 @@
         <td>FOSS Hack 2024 is the fourth edition of FOSS Hack, a hybrid hackathon to promote Free and Open Source Software by bringing together students and professionals to build or extend FOSS projects.
     </tr>
 </table>
-## Table of Contents
-- Introduction
-- Demo Video
-- Features
-- Future Plans
-- Installation
-- How to Contribute?
-- License
-- Tech Stack
+
+## Introduction
+- [Introduction](#introduction)
+- [Demo Video](#demo-video)
+- [Features](#features)
+- [Future Plans](#future-plans)
+- [Installation](#installation)
+- [How to Contribute?](#how-to-contribute)
+- [License](#license)
+- [Tech Stack](#tech-stack)
 
 
 ##  📝 Introduction
-Welcome to ParkOn, the ultimate solution for finding and reserving parking spots! Whether you're looking for the closest parking location in an open area or within a multi-storey building, ParkOn has you covered. With our app, you can effortlessly locate the nearest available parking spot, book it in advance, and reserve your spot to ensure you have a hassle-free parking experience.
+Welcome to ParkOn, the ultimate solution for finding and reserving parking spots! Whether you're looking for the closest parking location in an open area or within a multi-storey building, ParkOn has you covered. With our app, you can effortlessly locate the nearest available parking spot, book it in advance, and reserve your spot to ensure you have a hassle-free parking experience. Additionally, ParkOn helps you keep track of where you parked, so you'll never have a problem finding your vehicle again.
 
 ##  🎥 Demo Video
 
@@ -73,3 +74,4 @@ flutter doctor run
 - **Flutter:**  For creating a beautiful, natively compiled mobile application.
 - **Firebase:** For backend services including authentication and cloud storage.
 - **Google Sign-In:** For secure and easy user authentication using Google accounts.
+- **Figma:** For designing user interfaces and creating interactive prototypes.
