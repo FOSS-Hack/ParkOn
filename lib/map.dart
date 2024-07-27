@@ -14,6 +14,69 @@ class MapScreen extends StatelessWidget {
       ),
     );
 
+    void _showBottomSheet(BuildContext context) {
+      showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        builder: (context) {
+          return DraggableScrollableSheet(
+            expand: false,
+            initialChildSize: 0.3,
+            minChildSize: 0.3,
+            maxChildSize: 0.3,
+            builder: (context, scrollController) {
+              return Container(
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.grey[900],
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                ),
+                child: Column(
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 50,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'Options',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 20),
+                    ListTile(
+                      leading: Icon(Icons.directions_car, color: Colors.white),
+                      title: Text('Reserve a Spot', style: TextStyle(color: Colors.white)),
+                      onTap: () {
+                        // Handle reserve a spot action
+                      },
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.location_on, color: Colors.white),
+                      title: Text('Mark Coordinates', style: TextStyle(color: Colors.white)),
+                      onTap: () {
+                        // Handle mark coordinates action
+                      },
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
+        },
+      );
+    }
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -75,6 +138,15 @@ class MapScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.grey[900],
+        child: IconButton(
+          icon: Icon(Icons.expand_less, color: Colors.white, size: 30),
+          onPressed: () => _showBottomSheet(context),
+        ),
+      ),
     );
   }
 }
+
+
