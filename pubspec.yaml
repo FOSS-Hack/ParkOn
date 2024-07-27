@@ -66,13 +66,6 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
-flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
-  uses-material-design: true
-
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -103,3 +96,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter:
+  fonts:
+      - family: Poppins
+        fonts:
+          - asset: fonts/Poppins/Poppins-Medium.ttf
+      - family: PF
+        fonts:
+          - asset: fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf
+      - family: Roboto
+        fonts:
+          - asset: fonts/Roboto/Roboto-Bold.ttf
+  uses-material-design: true

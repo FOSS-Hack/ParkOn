@@ -80,22 +80,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromRGBO(35, 31, 32, 0.5),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Sign up',
+                  textAlign: TextAlign.left,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 32,
+                    fontSize: 80,
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Serif',
+                    fontFamily: 'Poppins',
                   ),
                 ),
                 SizedBox(height: 20),
@@ -105,60 +106,67 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: TextStyle(color: Colors.red),
                   ),
                 SizedBox(height: 20),
-                _buildTextField(
-                    _emailController, 'your email here@gmail.com', false),
+                _buildTextField(_emailController, 'email', false),
                 SizedBox(height: 20),
-                _buildTextField(
-                    _passwordController, 'your password here', true),
+                _buildTextField(_passwordController, 'password', true),
                 SizedBox(height: 20),
-                _buildTextField(
-                    _confirmPasswordController, 'confirm password', true),
+                _buildTextField(_confirmPasswordController, 'confirm password', true),
                 SizedBox(height: 40),
-                ElevatedButton(
-                  onPressed: _signUpWithEmail,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[850], // background color
-                    foregroundColor: Colors.white, // text color
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24.0, vertical: 12.0),
-                    child: Text(
-                      'Create account',
-                      style: TextStyle(fontSize: 16),
-                    ),
+                Center(
+                  child: Column(
+                    children: [
+                      ElevatedButton(
+                        onPressed: _signUpWithEmail,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange, // background color
+                          foregroundColor: Colors.black, // text color
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 24.0, vertical: 12.0),
+                          child: Text(
+                            'Create account',
+                            style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold,fontFamily: 'PF',),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: _signUpWithGoogle,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange, // background color
+                          foregroundColor: Colors.black, // text color
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 24.0, vertical: 12.0),
+                          child: Text(
+                            'Sign up with Google',
+                            style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold,fontFamily: 'PF',),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: _signUpWithGoogle,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[850], // background color
-                    foregroundColor: Colors.white, // text color
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24.0, vertical: 12.0),
+                Center(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/signin');
+                    },
+                    
                     child: Text(
-                      'Sign up with Google',
-                      style: TextStyle(fontSize: 16),
+                      'already have an account?',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white),
                     ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/signin');
-                  },
-                  child: Text(
-                    'already have an account?',
-                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ],
@@ -192,6 +200,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 }
+
 
 
 
