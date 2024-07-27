@@ -335,6 +335,7 @@ class _MapScreenState extends State<MapScreen> {
   ];
 
   osm.GeoPoint? currentLocation;
+  osm.GeoPoint? savedParkingCoordinates;
 
   @override
   void initState() {
@@ -442,6 +443,11 @@ class _MapScreenState extends State<MapScreen> {
           }
         });
         print('Coordinates saved to Firestore');
+        if (field == 'parkingCoordinates') {
+          setState(() {
+            savedParkingCoordinates = position;
+          });
+        }
       }
     } catch (e) {
       print('Error saving coordinates to Firestore: $e');
@@ -455,9 +461,9 @@ class _MapScreenState extends State<MapScreen> {
       builder: (context) {
         return DraggableScrollableSheet(
           expand: false,
-          initialChildSize: 0.3,
-          minChildSize: 0.3,
-          maxChildSize: 0.3,
+          initialChildSize: 0.4,
+          minChildSize: 0.4,
+          maxChildSize: 0.5,
           builder: (context, scrollController) {
             return Container(
               padding: EdgeInsets.all(16),
@@ -466,6 +472,7 @@ class _MapScreenState extends State<MapScreen> {
                 borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
                     child: Container(
@@ -507,6 +514,16 @@ class _MapScreenState extends State<MapScreen> {
                       }
                     },
                   ),
+                  if (savedParkingCoordinates != null)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10.0),
+                      child: Center(
+                      child: Text(
+                        'Last Saved Parking Coordinates:\nLat: ${savedParkingCoordinates!.latitude}, Long: ${savedParkingCoordinates!.longitude}',
+                        style: TextStyle(color: Colors.white, fontSize: 13),
+                      ),
+                    ),
+                    ),
                 ],
               ),
             );
