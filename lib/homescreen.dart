@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
-import 'map.dart'; // Import the new map screen
+import 'map.dart';  // Import the new map screen
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -78,18 +78,26 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromRGBO(35, 31, 32, 0.5),
+      
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Text(
-          'Park.io',
+          'ParkOn',
           style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
+            color: Colors.orange,
+            fontFamily: 'bauhaus',
+            fontSize: 32,
           ),
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromRGBO(35, 31, 32, 0.5),
         actions: [
+          IconButton(
+            icon: Icon(Icons.info, color: Colors.white),
+            onPressed: () {
+              Navigator.pushNamed(context, '/about-us');
+            },
+          ),
           IconButton(
             icon: Icon(Icons.settings, color: Colors.white),
             onPressed: () {
@@ -106,7 +114,10 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: _isFindingParking
-              ? LoadingAnimationWidget.dotsTriangle(color: Colors.orange, size: 200,)
+              ? LoadingAnimationWidget.dotsTriangle(
+                  color: Colors.orange,
+                  size: 200,
+                )
               : _parkingFound
                   ? _isFindingRoute
                       ? Column(
@@ -130,14 +141,15 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             SizedBox(height: 20),
                             LinearProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(Color.fromRGBO(237, 72, 40, 1)),
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                  Colors.orange),
                               backgroundColor: Colors.white,
                             ),
                             SizedBox(height: 20),
                             Text(
                               'Finding optimal route',
                               style: TextStyle(
-                                color: Color.fromRGBO(237, 72, 40, 1),
+                                color: Colors.white,
                                 fontSize: 16,
                               ),
                             ),
@@ -164,36 +176,29 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             SizedBox(height: 20),
-                            ElevatedButton(
-                              onPressed: _findParkingSpot,
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.grey[850], // background color
-                                foregroundColor: Colors.white, // text color
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30.0),
-                                ),
-                                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
-                              ),
-                              child: Text(
-                                'Find Parking Spot',
-                                style: TextStyle(fontSize: 16),
-                              ),
-                            ),
                           ],
                         )
                   : ElevatedButton(
                       onPressed: _findParkingSpot,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.grey[850], // background color
-                        foregroundColor: Colors.white, // text color
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all(CircleBorder()),
+                        padding: MaterialStateProperty.all(
+                          EdgeInsets.all(100),
                         ),
-                        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+                        backgroundColor: MaterialStateProperty.all(Colors.orange),
+                        overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                          (states) {
+                            if (states.contains(MaterialState.pressed)) return Colors.grey;
+                          },
+                        ),
                       ),
                       child: Text(
-                        'Find Parking Spot',
-                        style: TextStyle(fontSize: 16),
+                        'Find Parking',
+                        style: TextStyle(
+                          fontSize: 31,
+                          fontFamily: 'Poppins',
+                          color: Colors.black,
+                        ),
                       ),
                     ),
         ),
@@ -201,5 +206,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
