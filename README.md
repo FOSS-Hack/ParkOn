@@ -1,5 +1,5 @@
 <center>
-<img src="https://readme-typing-svg.herokuapp.com?color=36BCF7FF&size=40&width=900&height=80&lines=ParkOn+%F0%9F%9A%97" />
+<img src="https://readme-typing-svg.herokuapp.com?color=36BCF7FF&size=40&width=900&height=80&lines=ParkOn+%F0%9F%8F%8E%EF%B8%8F" />
 </center>
 
 ## Table of Contents
@@ -13,15 +13,18 @@
 - Tech Stack
 
 
-## Getting Started
+## Introduction
+Welcome to ParkOn, the ultimate solution for finding and reserving parking spots! Whether you're looking for the closest parking location in an open area or within a multi-storey building, ParkOn has you covered. With our app, you can effortlessly locate the nearest available parking spot, book it in advance, and reserve your spot to ensure you have a hassle-free parking experience.
 
-This project is a starting point for a Flutter application.
+## Demo Video
 
-A few resources to get you started if this is your first Flutter project:
+## Features
+**Closest Parking Location:** Instantly find the nearest parking spots based on your current location.
+**Multi-storey & Open Parking:** Access parking locations in both open areas and multi-storey buildings.
+**Advance Booking:** Secure your parking spot ahead of time to avoid any last-minute rush.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Future Plans
+**Real-Time Availability:** While ParkOn currently provides real-time availability updates for parking spots reserved through our app, we aim to integrate advanced sensors and IoT devices. This will help us improve monitoring and provide real-time updates even when users park without using the app.
+**Electric Vehicle Charging Stations:**   Adding information and booking options for parking spots with electric vehicle charging stations.
+**Voice Assistant Compatibility:** Enabling voice commands for a hands-free parking experience.
+**User Reviews and Rating:** Allowing users to review and rate parking locations to help others make informed decisions.
