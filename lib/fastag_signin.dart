@@ -49,22 +49,22 @@ class _FastagSignInScreenState extends State<FastagSignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromRGBO(35, 31, 32, 0.5),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
           child: SingleChildScrollView(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Enter Fastag Information',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 32,
+                    fontSize: 72,
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Serif',
+                    fontFamily: 'Poppins',
                   ),
                 ),
                 SizedBox(height: 20),
@@ -79,8 +79,8 @@ class _FastagSignInScreenState extends State<FastagSignInScreen> {
                 ElevatedButton(
                   onPressed: _saveFastagInfo,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[850], // background color
-                    foregroundColor: Colors.white, // text color
+                    backgroundColor: Colors.orange, // background color
+                    foregroundColor: Colors.black, // text color
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),

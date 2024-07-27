@@ -6,6 +6,7 @@ import 'package:parkio/settings.dart';
 import 'loading_screen.dart';
 import 'sign_up_screen.dart';
 import 'sign_in_screen.dart';
+import 'map.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,6 +31,8 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomeScreen(),
         '/settings': (context) => SettingsScreen(),
         '/login': (context) => SignUpScreen(),
+        '/homescreen': (context) => HomeScreen(),
+        '/map': (context) => MapScreen(),
       },
     );
   }

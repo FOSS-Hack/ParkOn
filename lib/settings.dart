@@ -132,7 +132,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ElevatedButton(
                 onPressed: _saveUserProfile,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey[850], // background color
+                  backgroundColor: Colors.orange, // background color
                   foregroundColor: Colors.white, // text color
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
@@ -142,7 +142,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
                   child: Text(
                     'Save',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 18,color: Colors.black,fontWeight: FontWeight.bold,fontFamily:'PF'),
                   ),
                 ),
               ),
@@ -155,7 +155,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Navigator.pushReplacementNamed(context, '/login');
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.redAccent, // background color
+                  backgroundColor: Colors.red, // background color
                   foregroundColor: Colors.white, // text color
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
@@ -165,7 +165,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
                   child: Text(
                     'Sign Out',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 18,fontFamily:'PF',color: Colors.black,fontWeight: FontWeight.bold,),
                   ),
                 ),
               ),

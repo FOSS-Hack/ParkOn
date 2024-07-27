@@ -71,22 +71,23 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromRGBO(35, 31, 32, 0.5),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Sign in',
+                  textAlign: TextAlign.left,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 32,
+                    fontSize: 80,
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Serif',
+                    fontFamily: 'Poppins',
                   ),
                 ),
                 SizedBox(height: 20),
@@ -96,15 +97,18 @@ class _SignInScreenState extends State<SignInScreen> {
                     style: TextStyle(color: Colors.red),
                   ),
                 SizedBox(height: 20),
-                _buildTextField(_emailController, 'your email here@gmail.com', false),
+                _buildTextField(_emailController, 'email', false),
                 SizedBox(height: 20),
-                _buildTextField(_passwordController, 'your password here', true),
+                _buildTextField(_passwordController, 'password', true),
                 SizedBox(height: 40),
+                Center(
+                  child: Column(
+                    children: [
                 ElevatedButton(
                   onPressed: _signInWithEmail,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[850], // background color
-                    foregroundColor: Colors.white, // text color
+                    backgroundColor: Colors.orange, // background color
+                    foregroundColor: Colors.black, // text color
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),
@@ -113,16 +117,17 @@ class _SignInScreenState extends State<SignInScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
                     child: Text(
                       'Sign in',
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,fontFamily: 'PF',),
                     ),
                   ),
                 ),
+                    
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: _signInWithGoogle,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[850], // background color
-                    foregroundColor: Colors.white, // text color
+                    backgroundColor: Colors.orange, // background color
+                    foregroundColor: Colors.black, // text color
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),
@@ -131,19 +136,25 @@ class _SignInScreenState extends State<SignInScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
                     child: Text(
                       'Sign in with Google',
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 16,fontFamily: 'PF',fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
+                ],
+                  ),
+                ),
                 SizedBox(height: 20),
-                GestureDetector(
+                Center(
+                child:GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/signup');
                   },
                   child: Text(
                     'new here?',
+                    textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.white),
                   ),
+                ),
                 ),
               ],
             ),
