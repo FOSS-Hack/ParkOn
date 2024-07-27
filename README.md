@@ -2,6 +2,19 @@
 <img src="https://readme-typing-svg.herokuapp.com?color=36BCF7FF&size=40&width=900&height=80&lines=ParkOn+%F0%9F%8F%8E%EF%B8%8F" />
 </center>
 
+## Created During : 
+<table>
+    <tr>
+      <th>Event Logo</th>
+      <th>Event Name</th>
+      <th>Event Description</th>
+    </tr>
+    <tr>
+        <td><img src="assets/foss-hack-logo.jpeg" width="200" height="auto"/></td>
+        <td>FossHack 2024</td>
+        <td>FOSS Hack 2024 is the fourth edition of FOSS Hack, a hybrid hackathon to promote Free and Open Source Software by bringing together students and professionals to build or extend FOSS projects.
+    </tr>
+</table>
 ## Table of Contents
 - Introduction
 - Demo Video
