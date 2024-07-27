@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "244564273412",
+    "project_id": "park-io-31076",
+    "storage_bucket": "park-io-31076.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:244564273412:android:7c565a443e863d15d4c851",
+        "android_client_info": {
+          "package_name": "com.example.parkio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChWqpM8vNdGe_2sBqihH0wNse_shRQ50g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
