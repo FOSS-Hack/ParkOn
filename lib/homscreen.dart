@@ -394,14 +394,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             SizedBox(height: 20),
                             LinearProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(Colors.purpleAccent),
+                              valueColor: AlwaysStoppedAnimation<Color>(Color.fromRGBO(237, 72, 40, 1)),
                               backgroundColor: Colors.white,
                             ),
                             SizedBox(height: 20),
                             Text(
                               'Finding optimal route',
                               style: TextStyle(
-                                color: Colors.purpleAccent,
+                                color: Color.fromRGBO(237, 72, 40, 1),
                                 fontSize: 16,
                               ),
                             ),

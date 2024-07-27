@@ -19,7 +19,7 @@ class MapScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Text(
-          'Park.io Map',
+          'Map',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -29,7 +29,7 @@ class MapScreen extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white, size: 30),
           onPressed: () {
-            Navigator.popUntil(context, ModalRoute.withName('/homescreen'));
+            Navigator.pushReplacementNamed(context, '/homescreen');
           },
         ),
       ),
