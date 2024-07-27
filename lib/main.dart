@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:parkio/fastag_signin.dart';
-import 'package:parkio/homscreen.dart';
+import 'package:parkio/homescreen.dart';
 import 'package:parkio/settings.dart';
 import 'loading_screen.dart';
 import 'sign_up_screen.dart';
 import 'sign_in_screen.dart';
 import 'map.dart';
+import 'about-us.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => SignUpScreen(),
         '/homescreen': (context) => HomeScreen(),
         '/map': (context) => MapScreen(),
+        '/about-us':(context) =>AboutUsScreen(),
       },
     );
   }
