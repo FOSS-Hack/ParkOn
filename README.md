@@ -67,6 +67,31 @@ flutter doctor run
 ```
 
 ## 🤝 How to Contribute?
+ParkOn is an open-source project, and we welcome contributions from the community to help improve it! If you're interested in contributing, please follow these steps:
+
+1. **Fork the Repository**: Click the "Fork" button at the top right corner of this repository to create a copy of the repository on your GitHub account.
+2. **Clone the Repository**: Clone your forked repository to your local machine using the following command:
+   ```bash
+   git clone https://github.com/your-username/parkon.git
+   ```
+3. **Create a Branch**: Create a new branch for your feature or bug fix:
+   ```bash
+   git checkout -b feature-or-bugfix-name
+   ```
+4. **Make Changes**: Make your changes to the codebase. Ensure your code follows the project's coding standards and conventions.
+5. **Commit Changes**: Commit your changes with a descriptive commit message:
+   ```bash
+   git commit -m "Description of your changes"
+   ```
+6. **Push Changes**: Push your changes to your forked repository:
+   ```bash
+   git push origin feature-or-bugfix-name
+   ```
+7. **Create a Pull Request**: Open a pull request to the main repository. Provide a clear description of your changes and why they are necessary.
+
+If you find any bugs or have feature requests, please create an issue in the [Issues](https://github.com/FOSS-Hack/ParkOn/issues) section of the repository.
+
+Thank you for contributing to ParkOn! Your support is greatly appreciated.
 
 ## 📜 License
 
