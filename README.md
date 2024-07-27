@@ -3,14 +3,14 @@
 </center>
 
 ## Table of Contents
-- [Introduction]
-- [Demo Video]
-- [Features]
-- [Future Plans]
-- [Installation]
-- [How to Contribute?]
-- [License]
-- [Tech Stack]
+- Introduction
+- Demo Video
+- Features
+-Future Plans
+- Installation
+- How to Contribute?
+- License
+- Tech Stack
 
 
 ## Getting Started
