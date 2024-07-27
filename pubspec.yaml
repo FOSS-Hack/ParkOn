@@ -41,6 +41,10 @@ dependencies:
   http: ^1.1.0
   http_parser: ^4.0.0
   google_sign_in: ^6.2.1
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+  flutter_osm_plugin: ^0.60.4
+
 
 
   # The following adds the Cupertino Icons font to your application.
