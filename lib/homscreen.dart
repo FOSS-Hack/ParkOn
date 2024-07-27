@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'map.dart'; // Import the new map screen
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -105,9 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: _isFindingParking
-              ? CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                )
+              ? LoadingAnimationWidget.dotsTriangle(color: Colors.orange, size: 200,)
               : _parkingFound
                   ? _isFindingRoute
                       ? Column(

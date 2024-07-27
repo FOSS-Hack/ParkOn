@@ -44,6 +44,7 @@ dependencies:
   flutter_map: ^7.0.2
   latlong2: ^0.9.1
   flutter_osm_plugin: ^0.60.4
+  loading_animation_widget: ^1.2.1
 
 
 
