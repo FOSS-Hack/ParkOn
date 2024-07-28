@@ -110,4 +110,7 @@ flutter:
       - family: Roboto
         fonts:
           - asset: fonts/Roboto/Roboto-Bold.ttf
+      - family: bauhaus
+        fonts:
+          - asset: fonts/bauhaus/BauhausBold.ttf
   uses-material-design: true

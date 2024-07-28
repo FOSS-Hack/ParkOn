@@ -5,7 +5,6 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-
 class MapScreen extends StatefulWidget {
   @override
   _MapScreenState createState() => _MapScreenState();
@@ -13,7 +12,7 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   osm.MapController mapController = osm.MapController(
-    initPosition: osm.GeoPoint(latitude: 12.820511696606678, longitude: 80.22185887503957), // Chennai coordinates
+    initPosition: osm.GeoPoint(latitude: 12.820511696606678, longitude: 80.22185887503957),
     areaLimit: osm.BoundingBox(
       east: 80.25,
       north: 12.77,
@@ -23,9 +22,9 @@ class _MapScreenState extends State<MapScreen> {
   );
 
   List<osm.GeoPoint> parkingSpots = [
-    osm.GeoPoint(latitude: 12.754000, longitude: 80.200000), // Example spot 1
-    osm.GeoPoint(latitude: 12.754200, longitude: 80.200300), // Example spot 2
-    osm.GeoPoint(latitude: 12.754400, longitude: 80.200600), // Example spot 3
+    osm.GeoPoint(latitude: 12.754000, longitude: 80.200000),
+    osm.GeoPoint(latitude: 12.754200, longitude: 80.200300),
+    osm.GeoPoint(latitude: 12.754400, longitude: 80.200600),
   ];
 
   osm.GeoPoint? currentLocation;
@@ -43,11 +42,7 @@ class _MapScreenState extends State<MapScreen> {
   void _addParkingSpots() {
     for (var spot in parkingSpots) {
       mapController.addMarker(spot, markerIcon: osm.MarkerIcon(
-        icon: Icon(
-          Icons.local_parking,
-          color: Colors.blue,
-          size: 48,
-        ),
+        icon: Icon(Icons.local_parking, color: Colors.blue, size: 48),
       ));
     }
   }
@@ -101,171 +96,185 @@ class _MapScreenState extends State<MapScreen> {
     }
   }
 
-Future<void> showReservationForm(BuildContext context) async {
-  TextEditingController locationController = TextEditingController();
-  DateTime? startTime;
-  DateTime? endTime;
+  Future<void> showReservationForm(BuildContext context) async {
+    TextEditingController locationController = TextEditingController();
+    DateTime? startTime;
+    DateTime? endTime;
 
-  await showModalBottomSheet(
-    context: context,
-    isScrollControlled: true,
-    builder: (context) {
-      return DraggableScrollableSheet(
-        expand: false,
-        initialChildSize: 0.6, // Adjusted height to fit form
-        minChildSize: 0.6,
-        maxChildSize: 0.8,
-        builder: (context, scrollController) {
-          return Container(
-            padding: EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.grey[900],
-              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-            ),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Center(
-                    child: Container(
-                      width: 50,
-                      height: 5,
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    'Reserve a Parking Spot',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(height: 20),
-                  TextField(
-                    controller: locationController,
-                    decoration: InputDecoration(
-                      labelText: 'Location',
-                      labelStyle: TextStyle(color: Colors.white),
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                      ),
-                    ),
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  SizedBox(height: 20),
-                  ListTile(
-                    title: Text(
-                      startTime == null
-                          ? 'Select Start Time'
-                          : 'Start Time: ${startTime?.toLocal()}',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onTap: () async {
-                      DateTime? pickedDate = await showDatePicker(
-                        context: context,
-                        initialDate: DateTime.now(),
-                        firstDate: DateTime.now(),
-                        lastDate: DateTime(2101),
-                      );
-                      if (pickedDate != null) {
-                        TimeOfDay? pickedTime = await showTimePicker(
-                          context: context,
-                          initialTime: TimeOfDay.now(),
-                        );
-                        if (pickedTime != null) {
-                          startTime = DateTime(
-                            pickedDate.year,
-                            pickedDate.month,
-                            pickedDate.day,
-                            pickedTime.hour,
-                            pickedTime.minute,
-                          );
-                          setState(() {});
-                        }
-                      }
-                    },
-                  ),
-                  ListTile(
-                    title: Text(
-                      endTime == null
-                          ? 'Select End Time'
-                          : 'End Time: ${endTime?.toLocal()}',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onTap: () async {
-                      DateTime? pickedDate = await showDatePicker(
-                        context: context,
-                        initialDate: DateTime.now(),
-                        firstDate: DateTime.now(),
-                        lastDate: DateTime(2101),
-                      );
-                      if (pickedDate != null) {
-                        TimeOfDay? pickedTime = await showTimePicker(
-                          context: context,
-                          initialTime: TimeOfDay.now(),
-                        );
-                        if (pickedTime != null) {
-                          endTime = DateTime(
-                            pickedDate.year,
-                            pickedDate.month,
-                            pickedDate.day,
-                            pickedTime.hour,
-                            pickedTime.minute,
-                          );
-                          setState(() {});
-                        }
-                      }
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (locationController.text.isNotEmpty && startTime != null && endTime != null) {
-                        reserveParkingSpot(locationController.text, startTime!, endTime!);
-                        Navigator.pop(context); // Close the bottom sheet after reservation
-                      } else {
-                        print('Please fill in all fields');
-                      }
-                    },
-                    child: Text('Reserve'),
-                  ),
-                ],
+    await showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (context) {
+        return DraggableScrollableSheet(
+          expand: false,
+          initialChildSize: 0.6,
+          minChildSize: 0.6,
+          maxChildSize: 0.8,
+          builder: (context, scrollController) {
+            return Container(
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.grey[900],
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
               ),
-            ),
-          );
-        },
-      );
-    },
-  );
-}
-
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 50,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'Reserve a Parking Spot',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 20),
+                    TextField(
+                      controller: locationController,
+                      decoration: InputDecoration(
+                        labelText: 'Location',
+                        labelStyle: TextStyle(color: Colors.white),
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                        ),
+                      ),
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    SizedBox(height: 20),
+                    ListTile(
+                      title: Text(
+                        startTime == null
+                            ? 'Select Start Time'
+                            : 'Start Time: ${startTime?.toLocal()}',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onTap: () async {
+                        DateTime? pickedDate = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime.now(),
+                          lastDate: DateTime(2101),
+                        );
+                        if (pickedDate != null) {
+                          TimeOfDay? pickedTime = await showTimePicker(
+                            context: context,
+                            initialTime: TimeOfDay.now(),
+                          );
+                          if (pickedTime != null) {
+                            startTime = DateTime(
+                              pickedDate.year,
+                              pickedDate.month,
+                              pickedDate.day,
+                              pickedTime.hour,
+                              pickedTime.minute,
+                            );
+                            setState(() {});
+                          }
+                        }
+                      },
+                    ),
+                    ListTile(
+                      title: Text(
+                        endTime == null
+                            ? 'Select End Time'
+                            : 'End Time: ${endTime?.toLocal()}',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onTap: () async {
+                        DateTime? pickedDate = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime.now(),
+                          lastDate: DateTime(2101),
+                        );
+                        if (pickedDate != null) {
+                          TimeOfDay? pickedTime = await showTimePicker(
+                            context: context,
+                            initialTime: TimeOfDay.now(),
+                          );
+                          if (pickedTime != null) {
+                            endTime = DateTime(
+                              pickedDate.year,
+                              pickedDate.month,
+                              pickedDate.day,
+                              pickedTime.hour,
+                              pickedTime.minute,
+                            );
+                            setState(() {});
+                          }
+                        }
+                      },
+                    ),
+                    SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        if (locationController.text.isNotEmpty && startTime != null && endTime != null) {
+                          reserveParkingSpot(locationController.text, startTime!, endTime!);
+                          Navigator.pop(context);
+                        } else {
+                          print('Please fill in all fields');
+                        }
+                      },
+                      child: Text('Reserve'),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
 
   Future<void> reserveParkingSpot(String location, DateTime startTime, DateTime endTime) async {
-  try {
-    User? user = FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      DocumentReference parkingSpotDoc =
-          FirebaseFirestore.instance.collection('multistorey').doc(location);
+    try {
+      User? user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        DocumentReference parkingSpotDoc = FirebaseFirestore.instance.collection('multistorey').doc(location);
 
-      // Update the parking spot with start time, end time, and user ID
-      await parkingSpotDoc.update({
-        'StartTime': startTime,
-        'EndTime': endTime,
-        'ReservationUserId': user.uid,
-      });
+        await parkingSpotDoc.update({
+          'StartTime': startTime,
+          'EndTime': endTime,
+          'ReservationUserId': user.uid,
+        });
 
-      print('Parking spot reserved successfully');
+        // Show a SnackBar with a success message
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Parking spot reserved successfully!'),
+            backgroundColor: Colors.green,
+            duration: Duration(seconds: 3),
+          ),
+        );
+        print('Parking spot reserved successfully');
+      }
+    } catch (e) {
+      // Show a SnackBar with an error message
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error reserving parking spot.'),
+          backgroundColor: Colors.red,
+          duration: Duration(seconds: 3),
+        ),
+      );
+      print('Error reserving parking spot: $e');
     }
-  } catch (e) {
-    print('Error reserving parking spot: $e');
-    }
-}
+  }
+
   Future<void> requestLocationPermission() async {
     var status = await Permission.location.request();
     if (status.isGranted) {
@@ -284,7 +293,6 @@ Future<void> showReservationForm(BuildContext context) async {
         currentLocation = position;
       });
 
-      // Save coordinates to Firestore
       await saveCoordinatesToFirestore(position, 'lastKnownCoordinates');
     } catch (e) {
       print('Error getting location: $e');
@@ -358,12 +366,8 @@ Future<void> showReservationForm(BuildContext context) async {
                     leading: Icon(Icons.directions_car, color: Colors.white),
                     title: Text('Reserve a Spot', style: TextStyle(color: Colors.white)),
                     onTap: () {
-                      Navigator.pop(context); // Close the options bottom sheet
+                      Navigator.pop(context);
                       showReservationForm(context);
-                      // String location = '1A5';
-                      // DateTime endTime = DateTime(2024, 7, 28, 12, 30);
-                      // DateTime startTime = DateTime(2024, 7, 28, 10, 30);
-                      // reserveParkingSpot(location, startTime, endTime);
                     },
                   ),
                   ListTile(
@@ -372,7 +376,7 @@ Future<void> showReservationForm(BuildContext context) async {
                     onTap: () {
                       if (currentLocation != null) {
                         saveCoordinatesToFirestore(currentLocation!, 'parkingCoordinates');
-                        Navigator.pop(context); // Close the bottom sheet after action
+                        Navigator.pop(context);
                       } else {
                         print('Current location is not available');
                       }
@@ -382,11 +386,11 @@ Future<void> showReservationForm(BuildContext context) async {
                     Padding(
                       padding: const EdgeInsets.only(top: 10.0),
                       child: Center(
-                      child: Text(
-                        'Last Saved Parking Coordinates:\nLat: ${savedParkingCoordinates!.latitude}, Long: ${savedParkingCoordinates!.longitude}',
-                        style: TextStyle(color: Colors.white, fontSize: 13),
+                        child: Text(
+                          'Last Saved Parking Coordinates:\nLat: ${savedParkingCoordinates!.latitude}, Long: ${savedParkingCoordinates!.longitude}',
+                          style: TextStyle(color: Colors.white, fontSize: 13),
+                        ),
                       ),
-                    ),
                     ),
                 ],
               ),
@@ -495,5 +499,3 @@ Future<void> showReservationForm(BuildContext context) async {
     );
   }
 }
-
-
