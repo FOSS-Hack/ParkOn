@@ -47,6 +47,8 @@ Welcome to ParkOn, the ultimate solution for finding and reserving parking spots
 
 ## ⚙️ Installation
 
+https://mega.nz/file/bhUkVSYa#xD2Veg2cTYfCsUWBlDg0qwaUAP-_oPIbjKOOXb7xGPg
+
 Download the above .apk file
 
 or
