@@ -410,13 +410,15 @@ class _MapScreenState extends State<MapScreen> {
         title: Text(
           'Map',
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.orange,
             fontWeight: FontWeight.bold,
+            fontFamily:'bauhaus',
+            fontSize:32,
           ),
         ),
         backgroundColor: Colors.black,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white, size: 30),
+          icon: Icon(Icons.arrow_back, color: Colors.orange, size: 32),
           onPressed: () {
             Navigator.pushReplacementNamed(context, '/homescreen');
           },
@@ -484,6 +486,7 @@ class _MapScreenState extends State<MapScreen> {
             right: 10,
             child: FloatingActionButton(
               onPressed: _showNearestParkingRoute,
+              backgroundColor: Colors.orange,
               child: Icon(Icons.directions, color: Colors.black),
             ),
           ),
