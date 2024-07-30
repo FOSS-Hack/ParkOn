@@ -23,7 +23,6 @@
 - [Future Plans](#-Future-Plans)
 - [Installation](#-Installation)
 - [How to Contribute?](#-How-to-Contribute)
-- [License](#-License)
 - [Tech Stack](#-Tech-Stack)
 
 
@@ -31,9 +30,18 @@
 Welcome to ParkOn, the ultimate solution for finding and reserving parking spots! Whether you're looking for the closest parking location in an open area or within a multi-storey building, ParkOn has you covered. With our app, you can effortlessly locate the nearest available parking spot, book it in advance, and reserve your spot to ensure you have a hassle-free parking experience. Additionally, ParkOn helps you keep track of where you parked, so you'll never have a problem finding your vehicle again.
 
 ##  🎥 Demo Video
+<a href="https://github.com/FOSS-Hack/ParkOn/blob/main/assets/Video%20Demonstration.mp4">
 
 ## 📸 Screenshots
-
+<pre>
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/LoadingPage.jpg">
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/SignUp.jpg">
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/SignIn.jpg">
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/AboutUs.jpg">
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/Settings.jpg">
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/Map.jpg">
+    <img src = https://github.com/FOSS-Hack/ParkOn/blob/main/assets/AboutUs.jpg>
+</pre>
 ## ⭐ Features
 - **Closest Parking Location:** Instantly find the nearest parking spots based on your current location.
 - **Multi-storey & Open Parking:** Access parking locations in both open areas and multi-storey buildings.
@@ -94,8 +102,6 @@ ParkOn is an open-source project, and we welcome contributions from the communit
 If you find any bugs or have feature requests, please create an issue in the [Issues](https://github.com/FOSS-Hack/ParkOn/issues) section of the repository.
 
 Thank you for contributing to ParkOn! Your support is greatly appreciated.
-
-## 📜 License
 
 ## 💻 Tech Stack
 - **Flutter:**  For creating a beautiful, natively compiled mobile application.
