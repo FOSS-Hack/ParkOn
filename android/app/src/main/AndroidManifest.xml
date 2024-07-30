@@ -13,7 +13,7 @@ package="com.example.parkio">
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     
     <application
-        android:label="parkio"
+        android:label="ParkOn"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
