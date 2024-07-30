@@ -30,17 +30,17 @@
 Welcome to ParkOn, the ultimate solution for finding and reserving parking spots! Whether you're looking for the closest parking location in an open area or within a multi-storey building, ParkOn has you covered. With our app, you can effortlessly locate the nearest available parking spot, book it in advance, and reserve your spot to ensure you have a hassle-free parking experience. Additionally, ParkOn helps you keep track of where you parked, so you'll never have a problem finding your vehicle again.
 
 ##  🎥 Demo Video
-<a href="https://github.com/FOSS-Hack/ParkOn/blob/main/assets/Video%20Demonstration.mp4">
+https://drive.google.com/file/d/1Ro0Go1gxuyV0ghB_V0dvWI1hvkg0ezC2/view?usp=drivesdk
 
 ## 📸 Screenshots
 <pre>
-    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/LoadingPage.jpg">
-    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/SignUp.jpg">
-    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/SignIn.jpg">
-    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/AboutUs.jpg">
-    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/Settings.jpg">
-    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/Map.jpg">
-    <img src = https://github.com/FOSS-Hack/ParkOn/blob/main/assets/AboutUs.jpg>
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/LoadingPage.jpg" width = "250">
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/SignUp.jpg" width = "250">
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/SignIn.jpg" width = "250">
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/AboutUs.jpg" width = "250">
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/Settings.jpg" width = "250">
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/Map.jpg" width = "250">
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/AboutUs.jpg" width = "250">
 </pre>
 ## ⭐ Features
 - **Closest Parking Location:** Instantly find the nearest parking spots based on your current location.
@@ -73,7 +73,7 @@ flutter pub get
 
 3. Run the application
 ```bash
-flutter doctor run
+flutter run
 ```
 
 ## 🤝 How to Contribute?
