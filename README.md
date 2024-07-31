@@ -34,7 +34,7 @@ https://drive.google.com/file/d/1Ro0Go1gxuyV0ghB_V0dvWI1hvkg0ezC2/view?usp=drive
 
 ## 📸 Screenshots
 <pre>
-    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/LoadingPage.jpg" width = "200"> <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/SignUp.jpg" width = "200"> <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/SignIn.jpg" width = "200"> <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/AboutUs.jpg" width = "200">
+    <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/LoadingPage.jpg" width = "200"> <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/SignUp.jpg" width = "200"> <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/SignIn.jpg" width = "200"> <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/HomePage.jpg" width = "200">
     <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/Settings.jpg" width = "200"> <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/Map.jpg" width = "200"> <img src = "https://github.com/FOSS-Hack/ParkOn/blob/main/assets/AboutUs.jpg" width = "200">
 </pre>
 ## ⭐ Features
