@@ -1,5 +1,5 @@
 <center>
-<img src="https://readme-typing-svg.herokuapp.com?color=36BCF7FF&size=40&width=900&height=80&lines=ParkOn+%F0%9F%8F%8E%EF%B8%8F" />
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=LogAin)](https://git.io/typing-svg)
 </center>
 
 ## Created During : 
